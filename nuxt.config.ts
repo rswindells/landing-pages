@@ -3,7 +3,4 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
   ssr: true,
-  experimental: {
-    payloadExtraction: false,
-  },
 });
