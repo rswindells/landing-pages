@@ -3,4 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
   ssr: true,
+  app: {
+    baseURL: "/landing-pages/",
+  },
+  experimental: {
+    payloadExtraction: true,
+  },
 });
