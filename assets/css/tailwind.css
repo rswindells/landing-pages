@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* make html and body full height */
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
