@@ -1,1 +1,0 @@
-import{_ as t}from"./CRx0tPxX.js";import{_ as o,c as a,b as n,w as c,a as _,o as s,d as r}from"./CyuFjtuS.js";const d={},l=_("h1",null,"Index page",-1);function u(i,p){const e=t;return s(),a("div",null,[l,n(e,{to:"about"},{default:c(()=>[r("Go to about page")]),_:1})])}const m=o(d,[["render",u]]);export{m as default};
