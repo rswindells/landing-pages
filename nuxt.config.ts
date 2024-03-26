@@ -22,9 +22,11 @@ export default defineNuxtConfig({
             "brand-neutral-light-blue": "hsl(220, 16%, 96%)",
             "brand-neutral-light-gray": "hsl(0, 0%, 98%)",
             "brand-neutral-white": "hsl(0, 0%, 100%)",
+            "brand-gray": "#9597A5",
+            "brand-black": "#2D314D",
           },
           fontSize: {
-            "body-copy": "1.125rem",
+            md: "1.125rem",
           },
           screens: {
             mobile: "375px",
@@ -32,6 +34,10 @@ export default defineNuxtConfig({
           backgroundImage: {
             "brand-gradient":
               "linear-gradient(160deg, #33D35E 0%, #2AB6D9 100%)",
+            "brand-intro-desktop":
+              "url('/landing-pages/assets/images/bg-intro-desktop.png')",
+            "brand-intro-mobile": "url('/images/bg-intro-mobile.png')",
+            "brand-mockups": "url('/assets/images/image-mockups.png')",
           },
         },
       },
