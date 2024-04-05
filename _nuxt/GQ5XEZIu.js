@@ -1,0 +1,1 @@
+import{_ as t}from"./BXqET-k9.js";import{_ as o,c as n,b as a,w as c,a as s,o as _,d as r}from"./D44oelMU.js";const d={},l=s("h1",null,"Index page",-1);function i(p,x){const e=t;return _(),n("div",null,[l,a(e,{to:"easybank"},{default:c(()=>[r("Go to test page")]),_:1})])}const u=o(d,[["render",i]]);export{u as default};
