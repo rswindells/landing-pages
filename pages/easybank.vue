@@ -41,16 +41,16 @@ onMounted(() => {
                     before:absolute before:left-0 before:bottom-0 
                     before:h-full before:w-full before:bg-cover 
                     before:bg-[bottom_70%_right] sm:before:bg-[bottom_32%_right] md:before:bg-[bottom_28%_right]
-                    before:bg-[url(~/assets/images/bg-intro-mobile.svg)]
+                    before:bg-[url(~/assets/images/easybank/bg-intro-mobile.svg)]
                     
-                    lg:before:bg-[url(~/assets/images/bg-intro-desktop.svg)] 
+                    lg:before:bg-[url(~/assets/images/easybank/bg-intro-desktop.svg)] 
                     lg:before:w-[140%] 
                     lg:before:bg-[top_75%_left] xl:before:bg-[top_50%_left] 
                     lg:before:bg-[length:160%]
                 ">
                 </div>
             </div>
-            <img src="~/assets/images/image-mockups.png"
+            <img src="~/assets/images/easybank/image-mockups.png"
                 alt="4 smartphones showing Easybank app with different screens of financial data"
                 class="
                     absolute top-0 left-1/2 -translate-x-1/2 translate-y-[10%]
@@ -76,28 +76,28 @@ onMounted(() => {
                         <easybank-feature title="Online Banking"
                             description="Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.">
                             <template #icon>
-                                <img src="~/assets/images/icon-online.svg" alt="icon-online" />
+                                <img src="~/assets/images/easybank/icon-online.svg" alt="icon-online" />
                             </template>
                         </easybank-feature>
 
                         <easybank-feature title="Simple Budgeting"
                             description="See exactly where your money goes each month. Receive notifications when you're close to hitting your limits.">
                             <template #icon>
-                                <img src="~/assets/images/icon-budgeting.svg" alt="icon-budgeting" />
+                                <img src="~/assets/images/easybank/icon-budgeting.svg" alt="icon-budgeting" />
                             </template>
                         </easybank-feature>
 
                         <easybank-feature title="Fast Onboarding"
                             description="We don't do branches. Open your account in minutes online and start taking control of your finances right away.">
                             <template #icon>
-                                <img src="~/assets/images/icon-onboarding.svg" alt="icon-onboarding" />
+                                <img src="~/assets/images/easybank/icon-onboarding.svg" alt="icon-onboarding" />
                             </template>
                         </easybank-feature>
 
                         <easybank-feature title="Open API"
                             description="Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.">
                             <template #icon>
-                                <img src="~/assets/images/icon-api.svg" alt="icon-api" />
+                                <img src="~/assets/images/easybank/icon-api.svg" alt="icon-api" />
                             </template>
                         </easybank-feature>
 
@@ -117,7 +117,7 @@ onMounted(() => {
                             title="Receive money in any currency with no fees"
                             description="The world is getting smaller and we're becoming more mobile. So why should you be forced to only receive money in a single ...">
                             <template #article-image>
-                                <img src="~/assets/images/image-currency.jpg" alt="image-currency"
+                                <img src="~/assets/images/easybank/image-currency.jpg" alt="image-currency"
                                     class="w-full h-full object-cover" />
                             </template>
                         </easybank-article-card>
@@ -127,7 +127,7 @@ onMounted(() => {
                             title="Treat yourself without worrying about money"
                             description="Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you ...">
                             <template #article-image>
-                                <img src="~/assets/images/image-restaurant.jpg" alt="image-restaurant"
+                                <img src="~/assets/images/easybank/image-restaurant.jpg" alt="image-restaurant"
                                     class="w-full h-full object-cover" />
                             </template>
                         </easybank-article-card>
@@ -135,7 +135,7 @@ onMounted(() => {
                         <easybank-article-card author="By Wilson Hutton" title="Take your Easybank card wherever you go"
                             description="We want you to enjoy your travels. This is why we don't charge any fees on purchases while you're abroad. We'll even show you ...">
                             <template #article-image>
-                                <img src="~/assets/images/image-plane.jpg" alt="image-plane"
+                                <img src="~/assets/images/easybank/image-plane.jpg" alt="image-plane"
                                     class="w-full h-full object-cover" />
                             </template>
                         </easybank-article-card>
@@ -144,7 +144,7 @@ onMounted(() => {
                             title="Our invite-only Beta accounts are now live!"
                             description="After a lot of hard work by the whole team, we're excited to launch our closed beta. It's easy to request an invite through the site ...">
                             <template #article-image>
-                                <img src="~/assets/images/image-confetti.jpg" alt="image-confetti"
+                                <img src="~/assets/images/easybank/image-confetti.jpg" alt="image-confetti"
                                     class="w-full h-full object-cover" />
                             </template>
                         </easybank-article-card>

@@ -12,7 +12,7 @@
                 <ul class="h-full flex-col gap-2 items-center py-4 md:flex-row md:gap-y-0 flex gap-x-[1.875rem]">
                     <li
                         class="flex items-center relative before:transition-opacity before:ease-in-out before:duration-200 before:absolute before:w-full before:h-1 before:bg-brand-gradient before:bottom-0 before:opacity-0 hover:before:opacity-100 hover:cursor-pointer">
-                        <a href="#">Home</a>
+                        <nuxt-link to="/">Home</nuxt-link>
                     </li>
                     <li
                         class="flex items-center relative before:transition-opacity before:ease-in-out before:duration-200 before:absolute before:w-full before:h-1 before:bg-brand-gradient before:bottom-0 before:opacity-0 hover:before:opacity-100 hover:cursor-pointer">
