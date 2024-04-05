@@ -1,6 +1,15 @@
+<script setup>
+const { showBanner, showBannerUI, dismissBanner } = useBanner();
+
+onMounted(() => {
+    showBanner();
+});
+
+</script>
 <template>
     <main class="w-full h-full overflow-y-auto">
-        <easybank-header class="fixed w-full z-50 " />
+        <easybank-header class="fixed w-full z-10 " @show-banner="showBanner" />
+        <easybank-banner v-model="showBannerUI" @close-banner="dismissBanner" />
 
         <section class="relative bg-white pt-[0px] lg:pt-[76px] container mx-auto
         ">
@@ -20,7 +29,7 @@
                         Easybank account
                         will be
                         a one-stop-shop for spending, saving, budgeting, investing, and much more.</p>
-                    <easybank-button-request-invite class="mt-4" />
+                    <easybank-button-request-invite class="mt-4" @click="showBanner" />
                 </div>
 
                 <div class="
@@ -139,7 +148,6 @@
                                     class="w-full h-full object-cover" />
                             </template>
                         </easybank-article-card>
-
                     </div>
                 </div>
             </div>
