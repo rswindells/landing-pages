@@ -8,9 +8,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "echo '' > dist/.nojekyll && gh-pages --dotfiles -d .output/public"
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
+    "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
