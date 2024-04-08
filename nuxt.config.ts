@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     baseURL: "/landing-pages/",
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
   },
   experimental: {
     payloadExtraction: true,
