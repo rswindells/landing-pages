@@ -1,1 +1,0 @@
-import{_ as o}from"./BEutOauZ.js";import{_ as t,c as a,b as n,w as c,F as _,a as r,o as s,d as m}from"./BrroVwMJ.js";const l={},d=r("h1",null,"Bookmark landing page",-1);function f(i,p){const e=o;return s(),a(_,null,[d,n(e,{to:"/"},{default:c(()=>[m("Home")]),_:1})],64)}const x=t(l,[["render",f]]);export{x as default};
