@@ -1,6 +1,10 @@
 <script setup>
 const { showBanner, showBannerUI, dismissBanner } = useBanner();
 
+useHead({
+    title: "Easybank Landing Page",
+})
+
 onMounted(() => {
     showBanner();
 });

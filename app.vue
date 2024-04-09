@@ -1,3 +1,14 @@
+<script setup>
+const mainTitle = "Landing Page Mockups";
+const mainDescription = "A series of landing page mockups from frontendmentor.io challenges.";
+useSeoMeta({
+    title: mainTitle,
+    description: mainDescription,
+    ogTitle: mainTitle,
+    ogDescription: mainDescription,
+});
+
+</script>
 <template>
     <div class="w-full h-full">
         <NuxtPage />
