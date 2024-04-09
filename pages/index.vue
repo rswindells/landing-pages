@@ -28,11 +28,13 @@ const pages = ref<Page[]>([
 
 <template>
     <main id="home"
-        class="relative h-full w-full bg-[var(--color-dark)] text-[var(--color-light)] flex items-center justify-center">
-        <div class="container mx-auto grid grid-cols-[repeat(5,1fr)] gap-10">
-            <header class="flex flex-col items-start space-y-8 col-[2/5]">
-                <h1
-                    class="text-5xl relative before:absolute before:w-full before:h-2 before:bg-[var(--color-three)] before:left-0 before:top-[80%] before:z-[-1] z-0">
+        class="relative min-h-full w-full bg-[var(--color-dark)] text-[var(--color-light)] flex items-center justify-center overflow-y-scroll">
+        <div class="container mx-auto space-y-16 grid content-center justify-center px-4 sm:px-10 pt-24 md:pt-0">
+            <header class="flex flex-col items-start space-y-8">
+                <h1 class="
+                        text-5xl
+                        underline underline-offset-4 decoration-[var(--color-three)] decoration-thickness-[1.25rem]
+                        ">
                     Landing Page Mockups</h1>
                 <p class="text-xl max-w-[70ch] text-balance">A series of landing page mockups from
                     frontendmentor.io challenges. These
@@ -40,30 +42,33 @@ const pages = ref<Page[]>([
                     Each landing page is standalone (single-page) and mobile responsive.
                 </p>
             </header>
-            <section class="col-[2/5] ">
-                <nav>
-                    <ul class="w-full grid gap-x-8 grid-cols-[repeat(auto-fill,minmax(220px,1fr))] ">
+            <section class="shrink mx-auto w-full max-w-[25rem] md:max-w-full">
+                <nav class="pb-[2rem]">
+                    <ul
+                        class="w-full grid gap-8 grid-cols-1 md:grid-cols-[repeat(2,minmax(12.5rem,22rem))] justify-between ">
                         <nuxt-link v-for="page in pages" :to="page.route" class="group">
                             <li class="
-                                    z-10 relative space-y-2 p-3 h-full text-[var(--color-dark)]
-                                    hover:translate-x-[-5px]
-                                    hover:translate-y-[-5px]
+                                        grid grid-cols-1 gap-4
+                                        z-10 relative space-y-2 p-3 h-full text-[var(--color-dark)]
+                                        hover:translate-x-[-5px]
+                                        hover:translate-y-[-5px]
 
-                                    group-focus:translate-x-[-5px]
-                                    group-focus:translate-y-[-5px]
+                                        group-focus:translate-x-[-5px]
+                                        group-focus:translate-y-[-5px]
 
-                                    transition-transform
-                                    before:transition-transform
+                                        transition-transform
+                                        before:transition-transform
 
-                                    before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-[var(--color-three)] 
-                                    before:hover:translate-x-[10px] before:hover:translate-y-[10px] 
-                                   
-                                    before:z-[-1]
+                                        before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-[var(--color-three)] 
+                                        before:hover:translate-x-[10px] before:hover:translate-y-[10px] 
+                                    
+                                        before:z-[-1]
 
-                                    after:absolute after:inset-0 after:bg-white after:z-[-1]
-                                    ">
-                                <div class="bg-slate-200 min-h-[200px] flex">
-                                    <img class="object-cover" :src="page.url" />
+                                        after:absolute after:inset-0 after:bg-white after:z-[-1]
+                                        ">
+                                <div class="bg-slate-200 min-h-[12.5rem] max-h-[15.5rem] flex">
+                                    <img class="object-cover w-full object-top" :src="page.url" height="367"
+                                        width="267" />
                                 </div>
                                 <h2 class="text-xl">{{ page.title }}</h2>
                                 <p class="text-sm">{{ page.description }}</p>
@@ -79,7 +84,6 @@ const pages = ref<Page[]>([
 <style lang="css">
 main#home {
 
-    /* --color-dark: #3A4856; */
     --color-dark: #051D2C;
     --color-light: #fdfdfc;
     --color-two: #396580;
