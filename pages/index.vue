@@ -6,7 +6,8 @@ interface Page {
     title: string
     route: string
     description?: string
-    url?: string
+    image_url?: string
+    image_alt?: string
 }
 
 const pages = ref<Page[]>([
@@ -15,15 +16,18 @@ const pages = ref<Page[]>([
         title: "Easybank",
         route: "/easybank",
         description: "A landing page for a banking application, built with Tailwindcss",
-        url: EasyBankImage
+        image_url: EasyBankImage,
+        image_alt: "A screenshot of landing page for a banking application with phones displaying financial data on the application"
     },
     {
         id: 2,
         title: "Bookmark",
         route: "/bookmark",
-        description: "A landing page for a bookmark manager, built with scss."
+        description: "A landing page for a bookmark manager, built with scss.",
+        image_url: "",
+        image_alt: "A screenshot of landing page for a bookmark manager"
     },
-])
+]);
 </script>
 
 <template>
@@ -67,7 +71,7 @@ const pages = ref<Page[]>([
                                         after:absolute after:inset-0 after:bg-white after:z-[-1]
                                         ">
                                 <div class="bg-slate-200 min-h-[12.5rem] max-h-[15.5rem] flex">
-                                    <img class="object-cover w-full object-top" :src="page.url" height="367"
+                                    <img class="object-cover w-full object-top" :src="page.image_url" height="367"
                                         width="267" />
                                 </div>
                                 <h2 class="text-xl">{{ page.title }}</h2>
