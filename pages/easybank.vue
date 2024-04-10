@@ -165,6 +165,15 @@ onMounted(() => {
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--color-dark);
+    font-size: 18px;
+}
+
 #__nuxt {
     overscroll-behavior: none;
 }
