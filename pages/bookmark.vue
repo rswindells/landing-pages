@@ -39,8 +39,7 @@ function closeNav() {
 <template>
     <div class="wrapper">
         <header>
-            <!-- Logo -->
-            <div>Logo</div>
+            <img src="~/assets/images/bookmark/logo-bookmark.svg" alt="Bookmark logo" />
             <nav class="desktop">
                 <ul>
                     <li>
@@ -234,7 +233,18 @@ function closeNav() {
                     </li>
                 </ul>
             </nav>
-            <footer></footer>
+            <footer>
+                <ul>
+                    <li>
+                        <nuxt-link to="/"><img src="~/assets/images/bookmark/icon-twitter.svg"
+                                alt="Twitter" /></nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link to="/"><img src="~/assets/images/bookmark/icon-facebook.svg"
+                                alt="Facebook" /></nuxt-link>
+                    </li>
+                </ul>
+            </footer>
         </dialog>
     </div>
 </template>
