@@ -23,7 +23,7 @@ const pages = ref<Page[]>([
         id: 2,
         title: "Bookmark",
         route: "/bookmark",
-        description: "A landing page for a bookmark manager, built with scss.",
+        description: "A landing page for a bookmark manager, built with css nesting via postcss-nesting.",
         image_url: "",
         image_alt: "A screenshot of landing page for a bookmark manager"
     },
