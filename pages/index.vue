@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import EasyBankImage from '~/assets/images/easybank/easybank_page.webp'
+import BookmarkImage from '~/assets/images/bookmark/bookmark_page.webp'
 
 interface Page {
     id: number
@@ -15,17 +16,17 @@ const pages = ref<Page[]>([
         id: 1,
         title: "Easybank",
         route: "/easybank",
-        description: "A landing page for a banking application, built with Tailwindcss",
+        description: "A landing page for a banking application, built with Tailwindcss and Vue 3 components.",
         image_url: EasyBankImage,
-        image_alt: "A screenshot of landing page for a banking application with phones displaying financial data on the application"
+        image_alt: "A screenshot of landing page for a banking application with phones displaying financial data on the application",
     },
     {
         id: 2,
         title: "Bookmark",
         route: "/bookmark",
-        description: "A landing page for a bookmark manager, built with scss.",
-        image_url: "",
-        image_alt: "A screenshot of landing page for a bookmark manager"
+        description: "A landing page for a bookmark manager, marked up as html (no components), built with css nesting via postcss-nesting for experimentation.",
+        image_url: BookmarkImage,
+        image_alt: "A screenshot of landing page for a bookmark manager",
     },
 ]);
 </script>
@@ -52,24 +53,27 @@ const pages = ref<Page[]>([
                         class="w-full grid gap-8 grid-cols-1 md:grid-cols-[repeat(2,minmax(12.5rem,22rem))] justify-between ">
                         <nuxt-link v-for="page in pages" :to="page.route" class="group">
                             <li class="
-                                        grid grid-cols-1 gap-4
-                                        z-10 relative space-y-2 p-3 h-full text-[var(--color-dark)]
-                                        hover:translate-x-[-5px]
-                                        hover:translate-y-[-5px]
+                                grid grid-cols-1 gap-4
+                                z-10 relative space-y-2 p-3 h-full text-[var(--color-dark)]
+                                hover:translate-x-[-5px]
+                                hover:translate-y-[-5px]
 
-                                        group-focus:translate-x-[-5px]
-                                        group-focus:translate-y-[-5px]
+                                group-focus:translate-x-[-5px]
+                                group-focus:translate-y-[-5px]
 
-                                        transition-transform
-                                        before:transition-transform
+                                transition-transform
+                                before:transition-transform
 
-                                        before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-[var(--color-three)] 
-                                        before:hover:translate-x-[10px] before:hover:translate-y-[10px] 
-                                    
-                                        before:z-[-1]
+                                before:absolute before:left-0 before:top-0 before:w-full before:h-full 
+                                before:hover:translate-x-[10px] before:hover:translate-y-[10px] 
+                            
+                                before:z-[-1]
 
-                                        after:absolute after:inset-0 after:bg-white after:z-[-1]
-                                        ">
+                                after:absolute after:inset-0 after:bg-white after:z-[-1]
+                                " :class="{
+                            'before:bg-easybank-green': page.id === 1,
+                            'before:bg-bookmark-blue': page.id === 2
+                        }">
                                 <div class="bg-slate-200 min-h-[12.5rem] max-h-[15.5rem] flex">
                                     <img class="object-cover w-full object-top" :src="page.image_url" height="367"
                                         width="267" />
@@ -92,6 +96,9 @@ main#home {
     --color-light: #fdfdfc;
     --color-two: #396580;
     --color-three: #68ABA1;
+
+    --color-easybank: #4ccc7b;
+    --color-bookmark: #566bd6;
 
     background-image: url('~/assets/images/svg/waves.svg');
     background-size: cover;

@@ -1,0 +1,61 @@
+#bookmark-page .footer {
+  background-color: var(--brand-primary-variant);
+  color: white;
+
+  .contained {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--size-8) 0;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: var(--size-6);
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+  }
+
+  li:hover {
+    color: var(--brand-tertiary);
+    fill: var(--brand-tertiary);
+  }
+
+  .nav-features-list,
+  .icons-list {
+    gap: var(--size-3);
+  }
+
+  .logo-circle {
+    fill: var(--brand-primary);
+  }
+
+  .logo-bookmark {
+    fill: white;
+  }
+
+  @media (min-width: 768px) {
+    .contained {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: var(--size-6) var(--size-4);
+    }
+
+    .logo {
+      margin-right: var(--size-8);
+    }
+
+    ul {
+      flex-direction: row;
+    }
+
+    .icons-list {
+      margin-left: auto;
+    }
+  }
+}

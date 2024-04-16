@@ -1,0 +1,36 @@
+#bookmark-page header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+
+  .desktop {
+    display: none;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      text-transform: uppercase;
+    }
+
+    li:hover {
+      color: var(--brand-tertiary);
+    }
+  }
+
+  .btn-hamburger {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    nav.desktop {
+      display: block;
+    }
+
+    .btn-hamburger {
+      display: none;
+    }
+  }
+}
