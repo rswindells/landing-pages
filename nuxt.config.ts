@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -28,6 +29,8 @@ export default defineNuxtConfig({
             "brand-neutral-white": "hsl(0, 0%, 100%)",
             "brand-gray": "#9597A5",
             "brand-black": "#2D314D",
+            "easybank-green": "#4ccc7b",
+            "bookmark-blue": "#566bd6"
           },
           fontSize: {
             md: "1.125rem",
