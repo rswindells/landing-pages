@@ -1,0 +1,71 @@
+#bookmark-page .faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-6);
+
+  & > p {
+    text-align: center;
+  }
+
+  .accordion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .accordion-item {
+    width: 100%;
+    border-bottom: 1px solid hsla(var(--brand-secondary-hsl), 0.3);
+
+    & h3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--size-4) 0;
+      max-width: 100%;
+      cursor: pointer;
+
+      & button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: start;
+      }
+
+      &:hover {
+        color: var(--brand-tertiary);
+      }
+    }
+
+    svg {
+      transition: transform 0.25s ease-in-out;
+      color: var(--brand-primary);
+    }
+
+    button[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+      color: var(--brand-tertiary);
+    }
+
+    button[aria-expanded="false"] svg {
+      transform: rotate(0deg);
+    }
+
+    [role="region"] {
+      padding: var(--size-4) 0;
+      max-width: 100%;
+    }
+
+    [hidden] {
+      display: none;
+
+      svg {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
