@@ -1,0 +1,70 @@
+#bookmark-page .download {
+  h2 {
+    margin-bottom: var(--size-5);
+  }
+
+  > h2,
+  > p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .download-card-container {
+    display: grid;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--size-5);
+    padding: var(--size-5);
+  }
+
+  .download-card {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--size-5);
+    padding-bottom: var(--size-5);
+
+    box-shadow: 0 10px 1.1rem 0 hsla(var(--brand-primary-hsl), 0.2);
+    border-radius: var(--radius-2);
+    text-wrap: balance;
+
+    > div {
+      display: grid;
+      justify-items: center;
+      padding: var(--size-5);
+      align-self: stretch;
+      gap: var(--size-1);
+
+      background-image: url("/assets/images/bookmark/bg-dots.svg");
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+
+      > h3 {
+        margin-top: var(--size-4);
+      }
+    }
+
+    > button {
+      margin-top: var(--size-5);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .download-card-container {
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
+
+    .download-card {
+      &:nth-child(2) {
+        margin-top: var(--size-5);
+      }
+
+      &:nth-child(3) {
+        margin-top: calc(var(--size-5) * 2);
+      }
+    }
+  }
+}

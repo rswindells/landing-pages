@@ -1,3 +1,154 @@
+<script setup>
+
+const navDialog = ref(null);
+const showMenu = ref(false);
+
+function onHamburgerClick() {
+    showMenu.value = !showMenu.value;
+
+    const links = navDialog.value.querySelectorAll('a');
+
+    if (showMenu.value) {
+        navDialog.value.showModal();
+
+
+        // use rafr to wait for the dialog to open
+        // as safari/firefox don't support allow-discrete
+        requestAnimationFrame(() => {
+            links.forEach((link) => {
+                link.classList.add('_show');
+            });
+        })
+
+    }
+}
+
+function closeNav() {
+
+    const links = navDialog.value.querySelectorAll('a');
+    links.forEach((link) => {
+        link.classList.remove('_show');
+    });
+
+    navDialog.value.close();
+    showMenu.value = false;
+}
+
+function showTab(tabId) {
+    const tabs = ['bookmarking', 'searching', 'sharing'];
+    const tabpanelIds = ['bookmarking-tab', 'searching-tab', 'sharing-tab'];
+
+    const btns = document.querySelectorAll(tabs.map(x => '#' + x).join(', '));
+    const panels = document.querySelectorAll(tabpanelIds.map(x => '#' + x).join(', '));
+
+
+    btns.forEach((btn) => {
+        if (btn.id !== tabId) {
+            btn.setAttribute('aria-selected', 'false');
+            btn.removeAttribute('tabindex');
+        } else {
+            btn.setAttribute('aria-selected', 'true');
+            btn.setAttribute('tabindex', '0');
+        }
+    });
+
+    panels.forEach((panel) => {
+        if (panel.id !== `${tabId}-tab`) {
+            panel.classList.add('is-hidden');
+        } else {
+            panel.classList.remove('is-hidden');
+
+            // focus
+            requestAnimationFrame(() => {
+                panel.focus();
+            });
+        }
+    });
+
+}
+
+function showFaqPanel(questionNo) {
+    const faqBtns = document.querySelectorAll('.accordion-item button');
+    const faqPanels = document.querySelectorAll('.accordion-item [role="region"]');
+    const btnId = `faq-btn-${questionNo}`;
+    const panelId = `faq-${questionNo}`;
+
+    faqBtns.forEach((btn) => {
+        if (btn.id !== btnId) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.removeAttribute('tabindex');
+        } else if (btn.id === btnId && btn.getAttribute('aria-expanded') === 'true') {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.removeAttribute('tabindex');
+        } else {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.setAttribute('tabindex', '0');
+        }
+    });
+
+    faqPanels.forEach((panel) => {
+
+        if (panel.id !== panelId || panel.id === panelId && !panel.hasAttribute('hidden')) {
+            panel.setAttribute('hidden', '');
+        } else {
+            panel.removeAttribute('hidden');
+        }
+    });
+}
+
+function handleFormSubmit(e) {
+    const formIsValid = validatInput();
+
+    if (formIsValid) {
+        console.log('form is valid, post data');
+    } else {
+        console.log('form is invalid');
+    }
+}
+
+function validatInput() {
+
+    const input = document.querySelector('.input-wrapper input');
+    const inputValue = input.value;
+    let valid = false;
+
+    if (!inputValue || inputValue && !validateEmail(inputValue)) {
+        console.log('add error class');
+        input.parentElement.classList.add('error');
+    } else {
+        console.log('rmv error');
+        input.parentElement.classList.remove('error');
+
+        valid = true;
+    }
+
+    return valid;
+}
+
+function handleKeydown() {
+    // if there's an error, remove it
+    const input = document.querySelector('.input-wrapper input');
+
+    if (input.parentElement.classList.contains('error')) {
+        input.parentElement.classList.remove('error');
+    }
+}
+
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+
+}
+
+/**
+ * TODO:
+ * - Add a11y
+ * - Add tab keys navigation 
+ * - Add animations
+ */
+
+</script>
+
 <template>
     <div id="bookmark-page" class="wrapper-main">
         <header>
@@ -300,7 +451,7 @@
         </footer>
 
         <dialog ref="navDialog">
-            <div class="wrapper contained">
+            <div class="wrapper">
                 <header>
                     <svg class="logo" width="148" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 25">
                         <g fill="none" fill-rule="evenodd">
@@ -351,3 +502,16 @@
         </dialog>
     </div>
 </template>
+
+
+<style>
+@import url('~/assets/css/bookmark/index.css');
+@import url('~/assets/css/bookmark/utilities.css');
+@import url("~/assets/css/bookmark/header.css");
+@import url("~/assets/css/bookmark/hero.css");
+@import url("~/assets/css/bookmark/features.css");
+@import url("~/assets/css/bookmark/download.css");
+@import url("~/assets/css/bookmark/faq.css");
+@import url("~/assets/css/bookmark/contact-us.css");
+@import url("~/assets/css/bookmark/footer.css");
+</style>

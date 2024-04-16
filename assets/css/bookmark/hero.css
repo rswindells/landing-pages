@@ -1,0 +1,126 @@
+/**
+    * Note: this is testing nesting media queries within css nesting
+*/
+#bookmark-page {
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--mobile-section-padding-x);
+    text-align: center;
+
+    p {
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row-reverse;
+      text-align: left;
+
+      & > .hero-img-wrapper {
+        --image-max-width: 100%;
+        flex-grow: 1;
+        min-height: 600px;
+      }
+
+      & .hero-text-wrapper {
+        --max-width: 400px;
+        justify-items: flex-start;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-text-wrapper {
+        max-width: 50%;
+        gap: 2rem;
+      }
+    }
+  }
+
+  .hero-btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      flex-grow: 1;
+      min-width: 175px;
+    }
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+
+      button {
+        flex-grow: 0;
+      }
+    }
+  }
+
+  .hero-text-wrapper {
+    --max-width: 100%;
+    max-width: var(--max-width);
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+
+    p {
+      font-size: var(--font-size-1);
+    }
+  }
+
+  .hero-img-wrapper {
+    --image-max-width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 20rem;
+
+    & img {
+      width: 100%;
+      height: auto;
+      max-width: var(--image-max-width);
+      flex-grow: 1;
+      align-self: center;
+    }
+
+    /* rect */
+    &::before {
+      --shape-top: calc(100px + 4rem);
+      --shape-width: 50vw;
+      --shape-margin-right: 0px;
+      --shape-height: 150px;
+
+      content: "";
+      position: absolute;
+      z-index: -1;
+      display: block;
+
+      top: var(--shape-top);
+      left: 50%;
+
+      width: 80vw;
+      height: var(--shape-height);
+      margin-right: var(--shape-margin-right);
+
+      background-color: var(--brand-primary);
+      border-radius: 100px 0 0 100px;
+
+      @media (min-width: 768px) {
+        --shape-top: calc(100px + 10rem);
+        --shape-width: 50vw;
+        --shape-margin-right: -10vw;
+        --shape-height: 200px;
+
+        left: 20vw;
+      }
+
+      @media (min-width: 1024px) {
+        --shape-height: 50%;
+        left: 50%;
+      }
+    }
+  }
+}

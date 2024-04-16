@@ -11,8 +11,10 @@
     "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.6.1",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.1",
+    "open-props": "^1.7.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
